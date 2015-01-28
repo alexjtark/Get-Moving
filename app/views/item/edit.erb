@@ -5,14 +5,21 @@
   <form action="/item/<%= @item.id %>" method="POST">
     <input type="hidden" name="_method" value="PUT">
 
-    Name:<input type="text" name="item[name]" value="<%= @item.name %>"><br>
-    Quantity:<input type="number" name="item[quantity]" value="<%= @item.quantity %>"><br>
-    Description: <input type="text" name="item[description]" value="<%= @item.description %>"><br>
-    <input type="submit">
+    <p2>Name:</p2><input type="text" name="item[name]" value="<%= @item.name %>"><br>
+    <p2>Quantity:</p2><input type="number" name="item[quantity]" value="<%= @item.quantity %>"><br>
+    <p2>Description: </p2><input type="text" name="item[description]" value="<%= @item.description %>">
+    <p>fragile?</p>
+      <select name="item[fragile]">
+    <% options = ["true", "false"] %>
+    <% options.each do |choice| %>
+    <option value="<%= choice %>"><%= choice %></option>
+    <% end %>
+    <br>
+    <input type="submit"><br>
   </form>
 </div>
 <% end %>
-
+<br>
  <form action="/item/<%= @item.id %>" method="post">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete">
