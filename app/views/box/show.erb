@@ -1,19 +1,34 @@
+<div id="go-back">
+  <a href="/">Go back</a>
+</div>
+
 <h1> Box Contents for: <%= @box.name.capitalize %> </h1>
-<a href="/">Go back</a>
 
 <div id="box-contents"></div>
-<% if @box.items.length == 0 %>
-<p> No contents yet, click to add something</p>
-<% else %>
-<% @box.items.each do |item| %>
-<ul>
-<li><%= item.quantity %> | <%= item.name.capitalize %> | <%= item.description %> | <%= item.fragile %> | <a href="/item/<%= item.id %>/edit">edit</a></li>
-</ul>
-<% end %>
-<% end %>
+  <% if @box.items.length == 0 %>
+  <p> No contents yet, click to add something</p>
+  <% else %>
+  <table class="display-table">
+    <th>Quantity</th>
+    <th>Item</th>
+    <th>Description</th>
+    <th>Fragile?</th>
+    <th></th>
+    <% @box.items.each do |item| %>
+    <tr>
+      <td><%= item.quantity %></td>
+      <td><%= item.name.capitalize %></td>
+      <td><%= item.description %></td>
+      <td><%= item.fragile %></td>
+      <td><a href="/item/<%= item.id %>/edit">edit</a></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
 
-<h3>Add an Item: </h3>
+
 <div id="new-item">
+<h3>Add an Item: </h3>
   <form action="/item/new" method="POST">
     <input type="hidden">
     <div id='item-info'>
