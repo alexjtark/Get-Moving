@@ -6,14 +6,20 @@ end
 
 post '/item/new' do
   item = Item.new(params[:item])
-  # item[:box_id] = @box.id
   if item.save
     erb :main
   end
 end
 
+put '/item/:id' do |id|
+  item = Item.find(id)
+  item.update(params[:item])
+  redirect "/box/#{item.box.id}"
+end
+
 delete '/item/:id' do |id|
   item = Item.find(id)
+  box = item.box
   item.destroy
-  redirect '/'
+  redirect "/box/#{box.id}"
 end
