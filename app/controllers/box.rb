@@ -1,4 +1,4 @@
-get '/box/all' do
+get '/box/index' do
   erb :'/box/index'
 end
 
@@ -7,6 +7,7 @@ get '/box/new' do
 end
 
 get '/box/:id' do |id|
-  box = Box.find(id)
-  erb
+  @box = Box.find(id)
+  erb :'/box/show'
 end
+
