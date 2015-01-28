@@ -7,7 +7,7 @@ end
 post '/item/new' do
   item = Item.new(params[:item])
   if item.save
-    erb :main
+    redirect "/box/#{item.box.id}"
   end
 end
 
