@@ -1,0 +1,16 @@
+<h1> Box Contents: </h1>
+
+<div id="box-contents"></div>
+<% if @box.items.length == 0 %>
+<p> No contents yet, click to add something</p>
+<% else %>
+<% @box.items.each do |item| %>
+<ul>
+<li><%= item.name.capitalize %></li>
+</ul>
+<% end %>
+<% end %>
+
+<div id="add-items">
+
+</div>

@@ -1,0 +1,10 @@
+
+<div class="display-header"><h1>Your current inventory:</h1></div>
+<a href="/box/new">click here to create a new box:</a>
+<div id="new-box"></div>
+<% current_user.boxes.each do |box| %>
+<ul>
+<li><a href="/box/<%= box.id %>"><%= box.name.capitalize %></a></li>
+<p><%= box.items.length %> Items </p>
+</ul>
+<% end %>
