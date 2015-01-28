@@ -11,6 +11,11 @@ get '/signout' do
   redirect '/'
 end
 
+
+get '/main' do
+  erb :main
+end
+
 post '/login' do
  user = User.find_by(username: params[:user][:username])
   if user.try(:authenticate, params[:user][:password])
