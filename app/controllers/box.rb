@@ -20,3 +20,15 @@ post '/box/new' do
     redirect '/box/new'
   end
 end
+
+put '/box/:id' do |id|
+  box = Box.find(id)
+  box.update(params[:box])
+  redirect "/box/#{box.id}"
+end
+
+delete '/box/:id' do |id|
+  box = Box.find(id)
+  box.destroy
+  redirect "/"
+end
