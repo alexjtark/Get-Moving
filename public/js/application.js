@@ -12,6 +12,18 @@ $(document).ready(function() {
     });
   });
 
+ $('header').on('click', '#signup-link', function(event) {
+     event.preventDefault();
+    var $target = $(event.target);
+
+    $.ajax({
+      url: '/signup',
+      type: 'GET'
+    }).done(function(response) {
+      $('#hidden-login').html(response);
+    });
+  });
+
 $('a').mouseenter(function(){
   $(this).css('background-color', 'yellow');
 });
