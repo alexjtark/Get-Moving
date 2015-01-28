@@ -27,9 +27,10 @@
         <a href="/signout">Signout</a>
         <a href="/">Home</a>
       <% else %>
-        <a href="/login">Login</a>
+        <a id="login-link" href="/login">Login</a>
         <a href="/signup">Signup</a>
       <% end %>
+      <div id="hidden-login"></div>
   </header>
   <%= yield %>
 </div>
