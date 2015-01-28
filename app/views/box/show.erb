@@ -11,6 +11,24 @@
 <% end %>
 <% end %>
 
-<div id="add-items">
-
+<h3>Add an Item: </h3>
+<div id="new-item">
+  <form action="/item/new" method="POST">
+    <input type="hidden">
+    <div id='item-info'>
+      <input type="text" name="item[name]" placeholder="Item Name">
+      <input type="number" name="item[quantity]" placeholder="Quantity">
+      <input type="text" name="item[description]" placeholder="Item Description">
+      <input type="hidden" name="item[box_id]" value="<%= @box.id %>">
+        <p>fragile?</p>
+      <select name="item[fragile]">
+    <% options = ["true", "false"] %>
+    <% options.each do |choice| %>
+    <option value="<%= choice %>"><%= choice %></option>
+    <% end %>
+    </select>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
 </div>
+
