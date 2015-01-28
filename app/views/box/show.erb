@@ -1,4 +1,4 @@
-<h1> Box Contents: </h1>
+<h1> Box Contents for: <%= @box.name.capitalize %> </h1>
 
 <div id="box-contents"></div>
 <% if @box.items.length == 0 %>
@@ -6,7 +6,7 @@
 <% else %>
 <% @box.items.each do |item| %>
 <ul>
-<li><%= item.name.capitalize %></li>
+<li><%= item.quantity %> | <%= item.name.capitalize %> | <%= item.description %> | <%= item.fragile %> | <a href="/item/<%= item.id %>/edit">edit</a></li>
 </ul>
 <% end %>
 <% end %>
