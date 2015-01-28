@@ -15,7 +15,7 @@ post '/box/new' do
   box = Box.new(params[:box])
   box[:user_id] = current_user.id
   if box.save
-    erb :main
+    redirect '/'
   else
     redirect '/box/new'
   end

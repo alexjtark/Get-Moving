@@ -3,7 +3,6 @@ get '/item/:id/edit' do |id|
   erb :'/item/edit'
 end
 
-
 post '/item/new' do
   item = Item.new(params[:item])
   if item.save

@@ -1,9 +1,17 @@
 get '/login' do
-  erb :'/auth/_login'
+  if request.xhr?
+    erb :'/auth/_login', layout: false
+  else
+    erb :'/auth/_login'
+  end
 end
 
 get '/signup' do
-  erb :'/auth/_signup'
+  if request.xhr?
+    erb :'/auth/_signup', layout: false
+  else
+    erb :'/auth/_signup'
+  end
 end
 
 get '/signout' do
@@ -17,7 +25,7 @@ get '/main' do
 end
 
 post '/login' do
- user = User.find_by(username: params[:user][:username])
+  user = User.find_by(username: params[:user][:username])
   if user.try(:authenticate, params[:user][:password])
     session[:user_id] = user.id
     erb :'/main'
