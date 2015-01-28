@@ -4,7 +4,12 @@
 <div id="new-box"></div>
 <% current_user.boxes.each do |box| %>
 <ul>
-<li><a href="/box/<%= box.id %>"><%= box.name.capitalize %></a></li>
+<li><a href="/box/<%= box.id %>"><%= box.name.capitalize %></a>
+<form action="/box/<%= box.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete">
+  </form>
+</li>
 <p><%= box.items.length %> Items </p>
 </ul>
 <% end %>
