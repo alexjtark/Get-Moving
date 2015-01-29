@@ -9,7 +9,7 @@ end
 get '/box/:id' do |id|
   @box = Box.find(id)
   if @box.user.id == current_user.id
-  erb :'/box/show'
+    erb :'/box/show'
   else
     redirect '/'
   end

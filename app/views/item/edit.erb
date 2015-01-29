@@ -18,10 +18,11 @@
     <br>
     <input id="edit-submit" type="submit"><br>
   </form>
-</div><br>
-<% end %>
+  </div>
+  <br>
+  <% end %>
 
- <form action="/item/<%= @item.id %>" method="post">
+  <form action="/item/<%= @item.id %>" method="post">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete This Item">
   </form>

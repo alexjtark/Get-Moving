@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   validates :email, uniqueness:  true
 
   has_secure_password
-
   has_many :boxes
   has_many :items, through: :boxes
 end
