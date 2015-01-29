@@ -8,7 +8,11 @@ end
 
 get '/box/:id' do |id|
   @box = Box.find(id)
+  if @box.user.id == current_user.id
   erb :'/box/show'
+  else
+    redirect '/'
+  end
 end
 
 post '/box/new' do
