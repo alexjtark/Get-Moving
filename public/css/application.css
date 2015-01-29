@@ -130,6 +130,11 @@ background-color: #BCE3C5;
   margin-top: 15px;
 }
 
-.new-box {
-  font-size: 25px;
+#new-box {
+  margin-top: 200px;
+font-size: 20px;
+width: 250px;
+position: absolute;
+left: 38%;
+text-align: center;
 }

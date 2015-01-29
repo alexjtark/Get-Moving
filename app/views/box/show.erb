@@ -2,7 +2,7 @@
   <a href="/">Go back</a>
 </div>
 <div class="all-views">
-<h1> Box Contents For: <%= @box.name.capitalize %> </h1>
+<h1> Box Contents For: <%= to_capital(@box.name) %> </h1>
 
 <div id="box-contents"></div>
   <% if @box.items.length == 0 %>
