@@ -17,8 +17,8 @@
     <% @box.items.each do |item| %>
     <tr>
       <td><%= item.quantity %></td>
-      <td><%= item.name.capitalize %></td>
-      <td><%= item.description %></td>
+      <td><%= to_capital(item.name) %></td>
+      <td><%= to_capital(item.description) %></td>
       <td><%= item.fragile %></td>
       <td><a href="/item/<%= item.id %>/edit">edit</a></td>
     </tr>
