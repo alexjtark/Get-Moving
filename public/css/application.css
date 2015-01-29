@@ -1,11 +1,18 @@
 /*== MAIN ==*/
 body {
-  border-top: 1em solid black;
+  /*border-top: 1em solid black;*/
+  background-color: #94C7B6;
 }
 
 .display-table, th, td {
   padding-left: 39px;
   padding-top: 20px;
+  font-family: 'Questrial', sans-serif;
+  font-size: 15px;
+}
+
+a {
+  font-size: 18px;
 }
 
 th {
@@ -13,7 +20,7 @@ th {
 }
 
 h1 {
-
+  font-family: 'Life Savers', cursive;
 }
 
 p2 {
@@ -57,13 +64,12 @@ font-family: 'Pacifico', cursive;
 h4 {
   font-size: 25px;
   font-family: 'Life Savers', cursive;
-
 }
 
 
 #no-user-login {
-  font-family: 'Indie Flower', cursive;
-  font-size: 25px;
+font-family: 'Questrial', sans-serif;
+font-size: 25px;
 position: absolute;
 text-align: center;
 margin-top: 250px;
@@ -89,26 +95,41 @@ text-align: center;
 }*/
 
 div#login-form {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Questrial', sans-serif;
   font-size: 20px;
   position: absolute;
   padding-top: 10px;
-  right: 85%;
-  width: 220px;
-  height: 110px;
+  right: 10%;
+  width: 250px;
+  height: 95px;
   border-style: solid;
-  background-color: orange;
+  background-color: #BCE3C5;
 }
 
 
 div#signup-form {
-  font-family: 'Indie Flower', cursive;
-  font-size: 20px;
+font-family: 'Questrial', sans-serif;
+font-size: 20px;
 position: absolute;
 padding-top: 10px;
 right: 13%;
 width: 250px;
-height: 150px;
+height: 120px;
 border-style: solid;
-background-color: orange;
+background-color: #BCE3C5;
+}
+
+.edit-item {
+  font-family: 'Questrial', sans-serif;
+  font-size: 20px;
+  width: 40px;
+  text-align: center;
+}
+
+#edit-submit {
+  margin-top: 15px;
+}
+
+.new-box {
+  font-size: 25px;
 }

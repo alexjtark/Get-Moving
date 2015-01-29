@@ -25,9 +25,9 @@ $(document).ready(function() {
   });
 
 $('a').mouseenter(function(){
-  $(this).css('background-color', 'yellow');
+  $(this).css('background-color', '#BCE3C5');
 });
 $('a').mouseleave(function(){
-  $(this).css('background-color', 'white');
+  $(this).css('background-color', '#94C7B6');
 });
 });

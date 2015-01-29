@@ -1,3 +1,4 @@
+<div class="all-views">
 <h1>Edit this item</h1>
 
 <% if current_user %>
@@ -15,12 +16,14 @@
     <option value="<%= choice %>"><%= choice %></option>
     <% end %>
     <br>
-    <input type="submit"><br>
+    <input id="edit-submit" type="submit"><br>
   </form>
-</div>
+</div><br>
 <% end %>
 
  <form action="/item/<%= @item.id %>" method="post">
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete This Item">
   </form>
+
+</div>
