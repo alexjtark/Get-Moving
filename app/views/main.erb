@@ -1,9 +1,8 @@
 <div class="all-views">
   <div class="display-header">
-      <h1>Your Current Inventory:</h1>
-
-    </div> <a href="/box/new">Click here to create a new box:</a>
-
+    <h1>Your Current Inventory:</h1>
+  </div>
+    <a href="/box/new">Click here to create a new box:</a>
     <div id="new-box"></div>
     <table class="display-table">
       <th>Box Name</th>
@@ -11,17 +10,17 @@
       <th></th>
       <% current_user.boxes.each do |box| %>
         <tr>
-           <td> <a href="/box/<%= box.id %>"><%= to_capital(box.name) %></a>
-            </td>
-            <td>
-              <%=box.items.length %> Items</td>
-            <td>
-              <form action="/box/<%= box.id %>" method="post">
-                <input type="hidden" name="_method" value="DELETE">
-                <input type="submit" value="Delete">
-              </form>
-                </td>
-          </tr>
-        <% end %>
-    </table>
+          <td> <a href="/box/<%= box.id %>"><%= to_capital(box.name) %></a>
+          </td>
+          <td>
+          <%=box.items.length %> Items</td>
+          <td>
+          <form action="/box/<%= box.id %>" method="post">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="Delete">
+          </form>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>
