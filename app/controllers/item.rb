@@ -1,6 +1,10 @@
 get '/item/:id/edit' do |id|
   @item = Item.find(id)
-  erb :'/item/edit'
+    if @item.user.id == current_user.id
+      erb :'/item/edit'
+    else
+      redirect '/'
+  end
 end
 
 post '/item/new' do
